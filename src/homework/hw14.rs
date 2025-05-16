@@ -1,8 +1,11 @@
-fn gray(n: u8) -> Vec<String> {
+fn gray(n: u8) -> Vec<String>  
+{
     static mut MEMO: Option<Vec<Vec<String>>> = None;
-    unsafe {
+    unsafe 
+    {
         let memo = MEMO.get_or_insert_with(|| vec![vec!["".to_string()]]);
-        while memo.len() <= n as usize {
+        while memo.len() <= n as usize
+        {
             let prev = &memo[memo.len() - 1];
             let mut next = vec![];
             next.extend(prev.iter().map(|s| "0".to_string() + s));
